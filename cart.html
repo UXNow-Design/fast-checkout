@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UXNow Shop - Warenkorb</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-blue-600 transition">UXNow Shop</a>
+                    <div class="hidden md:flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Neu</a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Bestseller</a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Angebote</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                    <a href="cart.html" class="relative group">
+                        <i class="fas fa-shopping-cart text-blue-600 text-xl"></i>
+                        <span class="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs animate-fade-in">1</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="fixed top-16 w-full bg-white shadow-sm z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-center">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <div class="ml-2">
+                            <span class="text-sm font-medium text-blue-600">Warenkorb</span>
+                        </div>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-200">
+                        <div class="w-0 h-full bg-blue-600"></div>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="ml-2">
+                            <span class="text-sm font-medium text-gray-400">Bezahlung</span>
+                        </div>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-200"></div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="ml-2">
+                            <span class="text-sm font-medium text-gray-400">Bestätigung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-12">
+        <div class="flex items-center justify-between mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Ihr Warenkorb</h1>
+            <a href="index.html" class="text-blue-600 hover:text-blue-700 flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i>
+                Weiter einkaufen
+            </a>
+        </div>
+
+        <div class="lg:grid lg:grid-cols-12 lg:gap-x-12">
+            <!-- Cart Items -->
+            <div class="lg:col-span-7">
+                <div class="bg-white shadow-sm rounded-lg divide-y divide-gray-200">
+                    <!-- Cart Item -->
+                    <div class="p-6">
+                        <div class="flex items-center">
+                            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Smart Watch" class="w-24 h-24 object-cover rounded-lg">
+                            <div class="ml-6 flex-1">
+                                <div class="flex items-center justify-between">
+                                    <div>
+                                        <h2 class="text-lg font-medium text-gray-900">
+                                            <a href="index.html" class="hover:text-blue-600">Smart Watch Pro</a>
+                                        </h2>
+                                        <p class="mt-1 text-sm text-gray-500">Schwarz</p>
+                                    </div>
+                                    <p class="text-lg font-medium text-gray-900">€299,99</p>
+                                </div>
+                                <div class="mt-4 flex items-center justify-between">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex items-center border border-gray-300 rounded-md">
+                                            <button class="px-3 py-1 text-gray-600 hover:bg-gray-100 transition-colors">-</button>
+                                            <input type="number" class="w-16 text-center border-0 focus:ring-0" value="1" min="1">
+                                            <button class="px-3 py-1 text-gray-600 hover:bg-gray-100 transition-colors">+</button>
+                                        </div>
+                                        <button class="text-sm text-red-600 hover:text-red-700 flex items-center transition-colors">
+                                            <i class="fas fa-trash mr-1"></i>
+                                            Entfernen
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center space-x-4">
+                                        <button class="text-sm text-gray-600 hover:text-gray-800 flex items-center">
+                                            <i class="far fa-heart mr-1"></i>
+                                            Merken
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Empty Cart Message -->
+                <div class="hidden mt-8 text-center py-12 bg-white rounded-lg shadow-sm">
+                    <i class="fas fa-shopping-cart text-gray-400 text-5xl mb-4"></i>
+                    <h3 class="text-lg font-medium text-gray-900">Ihr Warenkorb ist leer</h3>
+                    <p class="mt-2 text-sm text-gray-500">Fügen Sie Produkte hinzu, um mit dem Einkauf fortzufahren.</p>
+                    <a href="index.html" class="mt-6 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+                        Jetzt einkaufen
+                    </a>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="lg:col-span-5 mt-8 lg:mt-0">
+                <div class="bg-white shadow-sm rounded-lg p-6">
+                    <h2 class="text-lg font-medium text-gray-900">Zusammenfassung</h2>
+                    
+                    <div class="mt-6 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-600">Zwischensumme</p>
+                            <p class="text-sm font-medium text-gray-900">€299,99</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-600">Versand</p>
+                            <p class="text-sm font-medium text-gray-900">€4,99</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-600">Rabatt</p>
+                            <p class="text-sm font-medium text-green-600">-€0,00</p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-gray-200 pt-4">
+                            <p class="text-base font-medium text-gray-900">Gesamtsumme</p>
+                            <div class="text-right">
+                                <p class="text-base font-medium text-gray-900">€304,98</p>
+                                <p class="text-sm text-gray-500">inkl. MwSt.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <a href="checkout.html" class="w-full bg-blue-600 border border-transparent rounded-lg py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transform hover:scale-[1.02] transition-all">
+                            Zur Kasse
+                        </a>
+                        <div class="mt-4 flex items-center justify-center space-x-2 text-gray-500">
+                            <i class="fas fa-lock text-sm"></i>
+                            <span class="text-sm">Sichere Bezahlung</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coupon Code -->
+                <div class="mt-8">
+                    <div class="bg-white shadow-sm rounded-lg p-6">
+                        <h3 class="text-sm font-medium text-gray-900 mb-4">Gutschein einlösen</h3>
+                        <div class="flex">
+                            <input type="text" placeholder="Gutscheincode eingeben" class="flex-1 min-w-0 block w-full px-3 py-2 rounded-l-lg border-gray-300 focus:ring-blue-500 focus:border-blue-500 sm:text-sm" />
+                            <button class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-r-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                Einlösen
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="mt-8">
+                    <div class="bg-white shadow-sm rounded-lg p-6">
+                        <h3 class="text-sm font-medium text-gray-900 mb-4">Wir akzeptieren</h3>
+                        <div class="grid grid-cols-4 gap-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="h-6 opacity-75">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-6 opacity-75">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-6 opacity-75">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Klarna_Logo_black.svg" alt="Klarna" class="h-6 opacity-75">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

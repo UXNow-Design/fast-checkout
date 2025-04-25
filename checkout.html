@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UXNow Shop - Checkout</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+        .input-focus-ring {
+            transition: all 0.2s;
+        }
+        .input-focus-ring:focus-within {
+            ring: 2px;
+            ring-offset: 2px;
+            ring-blue-500;
+        }
+        input:focus, select:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+        .input-group:focus-within label {
+            color: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-blue-600 transition">UXNow Shop</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Progress Bar -->
+    <div class="fixed top-16 w-full bg-white shadow-sm z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-center">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="ml-2">
+                            <span class="text-sm font-medium text-blue-600">Warenkorb</span>
+                        </div>
+                    </div>
+                    <div class="w-16 h-1 bg-blue-600"></div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <div class="ml-2">
+                            <span class="text-sm font-medium text-blue-600">Bezahlung</span>
+                        </div>
+                    </div>
+                    <div class="w-16 h-1 bg-gray-200"></div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-400">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="ml-2">
+                            <span class="text-sm font-medium text-gray-400">Bestätigung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-40 pb-12">
+        <div class="lg:grid lg:grid-cols-12 lg:gap-x-12">
+            <!-- Checkout Form -->
+            <div class="lg:col-span-7">
+                <div class="space-y-8">
+                    <!-- Express Checkout -->
+                    <div class="bg-white shadow-sm rounded-lg p-6 mb-8">
+                        <h2 class="text-lg font-medium text-gray-900 mb-6">Express Checkout</h2>
+                        <div class="grid grid-cols-3 gap-4">
+                            <button class="w-full h-12 border rounded-lg hover:border-blue-500 transition-colors flex items-center justify-center">
+                                <img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" alt="PayPal" class="h-6">
+                            </button>
+                            <button class="w-full h-12 border rounded-lg hover:border-blue-500 transition-colors flex items-center justify-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" class="h-6">
+                            </button>
+                            <button class="w-full h-12 border rounded-lg hover:border-blue-500 transition-colors flex items-center justify-center">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_Pay_Logo.svg" alt="Google Pay" class="h-6">
+                            </button>
+                        </div>
+                        <div class="relative mt-6">
+                            <div class="absolute inset-0 flex items-center">
+                                <div class="w-full border-t border-gray-200"></div>
+                            </div>
+                            <div class="relative flex justify-center text-sm">
+                                <span class="px-4 bg-white text-gray-500">oder mit Kreditkarte bezahlen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="bg-white shadow-sm rounded-lg p-6 mb-8">
+                        <h2 class="text-lg font-medium text-gray-900 mb-6">Kontaktinformationen</h2>
+                        <div class="space-y-6">
+                            <div class="input-group">
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">E-Mail</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-envelope text-gray-400"></i>
+                                    </div>
+                                    <input type="email" id="email" name="email" class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:border-blue-500" placeholder="ihre@email.de">
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <input type="checkbox" id="newsletter" name="newsletter" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                                <label for="newsletter" class="ml-2 block text-sm text-gray-700">Newsletter abonnieren und 10% Rabatt sichern</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Address -->
+                    <div class="bg-white shadow-sm rounded-lg p-6 mb-8">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-lg font-medium text-gray-900">Lieferadresse</h2>
+                            <button class="text-sm text-blue-600 hover:text-blue-700 flex items-center">
+                                <i class="fas fa-bookmark mr-1"></i>
+                                Adresse speichern
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="input-group">
+                                <label for="firstname" class="block text-sm font-medium text-gray-700 mb-2">Vorname</label>
+                                <input type="text" id="firstname" name="firstname" class="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-900 placeholder-gray-400" placeholder="Max">
+                            </div>
+                            <div class="input-group">
+                                <label for="lastname" class="block text-sm font-medium text-gray-700 mb-2">Nachname</label>
+                                <input type="text" id="lastname" name="lastname" class="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-900 placeholder-gray-400" placeholder="Mustermann">
+                            </div>
+                            <div class="input-group md:col-span-2">
+                                <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Firma (optional)</label>
+                                <input type="text" id="company" name="company" class="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-900 placeholder-gray-400" placeholder="Musterfirma GmbH">
+                            </div>
+                            <div class="input-group md:col-span-2">
+                                <label for="address" class="block text-sm font-medium text-gray-700 mb-2">Adresse</label>
+                                <input type="text" id="address" name="address" class="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-900 placeholder-gray-400" placeholder="Musterstraße 123">
+                            </div>
+                            <div class="input-group md:col-span-2">
+                                <label for="apartment" class="block text-sm font-medium text-gray-700 mb-2">Apartment, Suite, etc. (optional)</label>
+                                <input type="text" id="apartment" name="apartment" class="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-900 placeholder-gray-400" placeholder="Apartment 4B">
+                            </div>
+                            <div class="input-group">
+                                <label for="plz" class="block text-sm font-medium text-gray-700 mb-2">PLZ</label>
+                                <input type="text" id="plz" name="plz" class="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-900 placeholder-gray-400" placeholder="12345">
+                            </div>
+                            <div class="input-group">
+                                <label for="city" class="block text-sm font-medium text-gray-700 mb-2">Stadt</label>
+                                <input type="text" id="city" name="city" class="block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-900 placeholder-gray-400" placeholder="Musterstadt">
+                            </div>
+                            <div class="input-group md:col-span-2">
+                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">Telefon</label>
+                                <div class="relative">
+                                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                        <i class="fas fa-phone text-gray-400"></i>
+                                    </div>
+                                    <input type="tel" id="phone" name="phone" class="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg shadow-sm text-gray-900 placeholder-gray-400" placeholder="+49">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Method -->
+                    <div class="bg-white shadow-sm rounded-lg p-6">
+                        <h2 class="text-lg font-medium text-gray-900 mb-6">Versandart</h2>
+                        <div class="space-y-4">
+                            <label class="block p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <input type="radio" name="shipping" value="standard" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300" checked>
+                                        <span class="ml-3 text-sm font-medium text-gray-900">Standard Versand</span>
+                                    </div>
+                                    <span class="text-sm font-medium text-gray-900">€4,99</span>
+                                </div>
+                                <p class="mt-1 ml-7 text-sm text-gray-500">2-4 Werktage</p>
+                            </label>
+                            <label class="block p-4 border border-gray-200 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center">
+                                        <input type="radio" name="shipping" value="express" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300">
+                                        <span class="ml-3 text-sm font-medium text-gray-900">Express Versand</span>
+                                    </div>
+                                    <span class="text-sm font-medium text-gray-900">€9,99</span>
+                                </div>
+                                <p class="mt-1 ml-7 text-sm text-gray-500">1-2 Werktage</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="lg:col-span-5 mt-8 lg:mt-0">
+                <div class="bg-white shadow-sm rounded-lg p-6 sticky top-40">
+                    <h2 class="text-lg font-medium text-gray-900 mb-6">Bestellübersicht</h2>
+                    
+                    <!-- Product -->
+                    <div class="flex items-center pb-6 mb-6 border-b border-gray-200">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Smart Watch Pro" class="w-20 h-20 object-cover rounded-lg">
+                        <div class="ml-4 flex-1">
+                            <h3 class="text-sm font-medium text-gray-900">Smart Watch Pro</h3>
+                            <p class="mt-1 text-sm text-gray-500">Schwarz</p>
+                            <div class="mt-1 flex items-center">
+                                <span class="text-sm text-gray-500">1×</span>
+                                <span class="ml-2 text-sm font-medium text-gray-900">€299,99</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price Breakdown -->
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-600">Zwischensumme</p>
+                            <p class="text-sm font-medium text-gray-900">€299,99</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-600">Versand</p>
+                            <p class="text-sm font-medium text-gray-900">€4,99</p>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <p class="text-sm text-gray-600">Rabatt</p>
+                            <p class="text-sm font-medium text-green-600">-€0,00</p>
+                        </div>
+                        <div class="flex items-center justify-between border-t border-gray-200 pt-4">
+                            <p class="text-base font-medium text-gray-900">Gesamtsumme</p>
+                            <div class="text-right">
+                                <p class="text-base font-medium text-gray-900">€304,98</p>
+                                <p class="text-sm text-gray-500">inkl. MwSt.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Checkout Button -->
+                    <div class="mt-8">
+                        <a href="confirmation.html" class="w-full bg-blue-600 border border-transparent rounded-lg py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transform hover:scale-[1.02] transition-all">
+                            Jetzt kostenpflichtig bestellen
+                        </a>
+                        <div class="mt-4 flex items-center justify-center">
+                            <i class="fas fa-lock text-gray-400 mr-2"></i>
+                            <span class="text-sm text-gray-500">Sichere Bezahlung</span>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="mt-8 border-t border-gray-200 pt-8">
+                        <h3 class="text-sm font-medium text-gray-900 mb-4">Wir akzeptieren</h3>
+                        <div class="flex space-x-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="h-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-8">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" class="h-8">
+                            <img src="https://cdn.worldvectorlogo.com/logos/klarna-1.svg" alt="Klarna" class="h-8">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add simple form validation
+        document.querySelector('a[href="confirmation.html"]').addEventListener('click', function(e) {
+            const email = document.getElementById('email').value;
+            const firstname = document.getElementById('firstname').value;
+            const lastname = document.getElementById('lastname').value;
+            const address = document.getElementById('address').value;
+            const plz = document.getElementById('plz').value;
+            const city = document.getElementById('city').value;
+            
+            if (!email || !firstname || !lastname || !address || !plz || !city) {
+                e.preventDefault();
+                alert('Bitte füllen Sie alle erforderlichen Felder aus.');
+            }
+        });
+    </script>
+</body>
+</html> 

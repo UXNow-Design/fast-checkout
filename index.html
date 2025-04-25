@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UXNow Shop - Smart Watch Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+        .color-dot.selected {
+            box-shadow: 0 0 0 2px white, 0 0 0 4px #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center space-x-8">
+                    <a href="index.html" class="text-xl font-bold text-gray-800 hover:text-blue-600 transition">UXNow Shop</a>
+                    <div class="hidden md:flex space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Neu</a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Bestseller</a>
+                        <a href="#" class="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">Angebote</a>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-600 hover:text-gray-900">
+                        <i class="fas fa-search text-xl"></i>
+                    </button>
+                    <a href="cart.html" class="relative group">
+                        <i class="fas fa-shopping-cart text-gray-600 group-hover:text-gray-900 text-xl transition-colors"></i>
+                        <span class="absolute -top-2 -right-2 bg-blue-600 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs animate-fade-in">1</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-4">
+        <nav class="flex" aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-2 text-sm text-gray-500">
+                <li><a href="#" class="hover:text-gray-700">Home</a></li>
+                <li><span class="mx-2">/</span></li>
+                <li><a href="#" class="hover:text-gray-700">Wearables</a></li>
+                <li><span class="mx-2">/</span></li>
+                <li class="text-gray-900 font-medium">Smart Watch Pro</li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- Product Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-x-12">
+            <!-- Product Images -->
+            <div class="relative">
+                <div class="aspect-w-4 aspect-h-5 rounded-lg overflow-hidden bg-white">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Smart Watch" class="w-full h-[600px] object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+                    <div class="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                        Neu
+                    </div>
+                </div>
+                <div class="mt-4 grid grid-cols-4 gap-4">
+                    <button class="relative rounded-md overflow-hidden border-2 border-blue-600">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30" alt="Smart Watch" class="w-full h-24 object-cover">
+                    </button>
+                    <button class="relative rounded-md overflow-hidden border-2 border-gray-200 hover:border-blue-600 transition-colors">
+                        <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d" alt="Smart Watch" class="w-full h-24 object-cover">
+                    </button>
+                    <button class="relative rounded-md overflow-hidden border-2 border-gray-200 hover:border-blue-600 transition-colors">
+                        <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d" alt="Smart Watch" class="w-full h-24 object-cover">
+                    </button>
+                    <button class="relative rounded-md overflow-hidden border-2 border-gray-200 hover:border-blue-600 transition-colors">
+                        <img src="https://images.unsplash.com/photo-1434493789847-2f02dc6ca35d" alt="Smart Watch" class="w-full h-24 object-cover">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Details -->
+            <div class="mt-10 lg:mt-0 lg:pl-8">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <h1 class="text-3xl font-bold text-gray-900">Smart Watch Pro</h1>
+                        <div class="mt-2 flex items-center space-x-2">
+                            <div class="flex text-yellow-400">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-sm text-gray-500">(127 Bewertungen)</span>
+                        </div>
+                    </div>
+                    <button class="text-gray-400 hover:text-red-500 transition-colors">
+                        <i class="far fa-heart text-2xl"></i>
+                    </button>
+                </div>
+
+                <div class="mt-4">
+                    <div class="flex items-center space-x-3">
+                        <p class="text-3xl font-bold text-gray-900">€299,99</p>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            -20%
+                        </span>
+                    </div>
+                    <p class="mt-1 text-sm text-gray-500 line-through">€374,99</p>
+                </div>
+
+                <div class="mt-6 space-y-6">
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900">Beschreibung</h3>
+                        <div class="mt-4 prose prose-sm text-gray-500">
+                            <p>Die Smart Watch Pro vereint elegantes Design mit modernster Technologie. Mit einer Akkulaufzeit von bis zu 7 Tagen, Herzfrequenzmessung, GPS und vielen weiteren Features ist sie der perfekte Begleiter für Ihren aktiven Lebensstil.</p>
+                            <ul class="mt-4 space-y-2">
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Bis zu 7 Tage Akkulaufzeit
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    Wasserdicht (5 ATM)
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    24/7 Herzfrequenzmessung
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2"></i>
+                                    GPS & GLONASS
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900">Farbe</h3>
+                        <div class="mt-4 flex items-center space-x-3">
+                            <button class="color-dot selected w-8 h-8 bg-black rounded-full ring-2 ring-offset-2 transition-shadow"></button>
+                            <button class="color-dot w-8 h-8 bg-gray-300 rounded-full hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-shadow"></button>
+                            <button class="color-dot w-8 h-8 bg-blue-500 rounded-full hover:ring-2 hover:ring-offset-2 hover:ring-blue-500 transition-shadow"></button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-lg font-medium text-gray-900">Menge</h3>
+                        <div class="mt-4 flex items-center space-x-4">
+                            <div class="flex items-center border border-gray-300 rounded-md">
+                                <button class="px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors">-</button>
+                                <input type="number" id="quantity" class="w-16 text-center border-0 focus:ring-0" value="1" min="1">
+                                <button class="px-4 py-2 text-gray-600 hover:bg-gray-100 transition-colors">+</button>
+                            </div>
+                            <span class="text-sm text-gray-500">Noch 12 auf Lager</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 space-y-4">
+                    <button onclick="window.location.href='cart.html'" class="w-full bg-blue-600 border border-transparent rounded-lg py-4 px-8 flex items-center justify-center text-lg font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transform hover:scale-[1.02] transition-all">
+                        <i class="fas fa-shopping-cart mr-2"></i>
+                        In den Warenkorb
+                    </button>
+                    <button class="w-full bg-gray-100 border border-gray-300 rounded-lg py-4 px-8 flex items-center justify-center text-lg font-medium text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+                        <i class="fas fa-bolt mr-2"></i>
+                        Sofort kaufen
+                    </button>
+                </div>
+
+                <!-- Additional Info -->
+                <div class="mt-8 border-t border-gray-200 pt-8">
+                    <div class="grid grid-cols-3 gap-4 text-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-truck text-2xl text-gray-400 mb-2"></i>
+                            <span class="text-sm text-gray-500">Kostenloser Versand</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-undo text-2xl text-gray-400 mb-2"></i>
+                            <span class="text-sm text-gray-500">30 Tage Rückgabe</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-shield-alt text-2xl text-gray-400 mb-2"></i>
+                            <span class="text-sm text-gray-500">2 Jahre Garantie</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
