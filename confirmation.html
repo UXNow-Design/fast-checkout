@@ -39,32 +39,32 @@
     <!-- Progress Bar -->
     <div class="fixed top-16 w-full bg-white shadow-sm z-40">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex items-center justify-center">
+            <div class="flex items-center justify-center space-x-2 sm:space-x-4">
                 <div class="flex items-center space-x-4">
                     <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
-                            <i class="fas fa-check"></i>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-check text-xs sm:text-sm"></i>
                         </div>
                         <div class="ml-2">
-                            <span class="text-sm font-medium text-blue-600">Warenkorb</span>
+                            <span class="text-xs sm:text-sm font-medium text-blue-600 hidden sm:inline">Warenkorb</span>
                         </div>
                     </div>
-                    <div class="w-16 h-1 bg-blue-600"></div>
+                    <div class="w-8 sm:w-16 h-1 bg-blue-600"></div>
                     <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
-                            <i class="fas fa-check"></i>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-check text-xs sm:text-sm"></i>
                         </div>
                         <div class="ml-2">
-                            <span class="text-sm font-medium text-blue-600">Bezahlung</span>
+                            <span class="text-xs sm:text-sm font-medium text-blue-600 hidden sm:inline">Bezahlung</span>
                         </div>
                     </div>
-                    <div class="w-16 h-1 bg-blue-600"></div>
+                    <div class="w-8 sm:w-16 h-1 bg-blue-600"></div>
                     <div class="flex items-center">
-                        <div class="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
-                            <i class="fas fa-check"></i>
+                        <div class="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            <i class="fas fa-check text-xs sm:text-sm"></i>
                         </div>
                         <div class="ml-2">
-                            <span class="text-sm font-medium text-blue-600">Bestätigung</span>
+                            <span class="text-xs sm:text-sm font-medium text-blue-600 hidden sm:inline">Bestätigung</span>
                         </div>
                     </div>
                 </div>
@@ -83,8 +83,10 @@
             <p class="text-lg text-gray-600">Vielen Dank für Ihren Einkauf bei UXNow Shop.</p>
         </div>
 
+        <!-- Grid stacks columns by default, uses lg breakpoint for side-by-side -->
         <div class="lg:grid lg:grid-cols-12 lg:gap-x-12">
             <!-- Order Details -->
+            <!-- Takes full width on mobile, 7 cols on lg -->
             <div class="lg:col-span-7">
                 <div class="bg-white shadow-sm rounded-lg p-6 mb-8">
                     <div class="flex items-center justify-between mb-6">
@@ -164,6 +166,7 @@
             </div>
 
             <!-- Order Summary -->
+            <!-- Takes full width on mobile, 5 cols on lg -->
             <div class="lg:col-span-5 mt-8 lg:mt-0">
                 <div class="bg-white shadow-sm rounded-lg p-6">
                     <h2 class="text-lg font-medium text-gray-900 mb-6">Zahlungsübersicht</h2>
@@ -200,6 +203,7 @@
 
                     <!-- Actions -->
                     <div class="mt-8 space-y-4">
+                        <!-- Added w-full for mobile buttons -->
                         <a href="index.html" class="w-full bg-blue-600 border border-transparent rounded-lg py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transform hover:scale-[1.02] transition-all">
                             Weiter einkaufen
                         </a>
